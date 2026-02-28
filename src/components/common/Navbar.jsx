@@ -222,7 +222,7 @@ const Navbar = () => {
                             {/* Drawer Header */}
                             <div className="flex items-center justify-between p-6 border-b border-slate-100">
                                 <div className="flex items-center gap-3">
-                                    <img src="/src/assets/images/Logo.png" alt="" className="w-8 h-8 object-contain" />
+                                    <img src={images.logo} alt="" className="w-8 h-8 object-contain" />
                                     <span className="text-base font-black text-secondary-dark tracking-tight">VISHAKA</span>
                                 </div>
                                 <button
