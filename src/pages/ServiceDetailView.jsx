@@ -1,0 +1,264 @@
+import React, { useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import {
+    ChevronLeft,
+    ArrowRight,
+    CheckCircle2,
+    ShieldCheck,
+    Zap,
+    HardHat,
+    Layout,
+    Clock,
+    Waves,
+    Building2
+} from 'lucide-react';
+
+import CTASection from '../components/common/CTASection';
+
+const ServiceDetailView = () => {
+    const { serviceId } = useParams();
+
+    // Data for different services
+    const serviceData = {
+        "residential-construction": {
+            title: "Residential Construction",
+            heroImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop",
+            description: "We specialize in crafting bespoke living spaces that combine aesthetic brilliance with structural perfection. Our residential projects range from ultra-luxury villas to smart modern apartment complexes.",
+            features: [
+                {
+                    title: "Custom Villa Design",
+                    desc: "Tailor-made architectural solutions that reflect your personal lifestyle and aspirations.",
+                    icon: Layout,
+                    benefits: ["Unique Design", "Premium Finishes", "Space Optimization"]
+                },
+                {
+                    title: "Modern Apartment Towers",
+                    desc: "High-density living solutions with a focus on community, light, and modern amenities.",
+                    icon: Building2, // Imported from lucide-react? Wait, I need to check Building2
+                    benefits: ["Strategic Locations", "Smart Facilities", "Eco-friendly Design"]
+                },
+                {
+                    title: "Sustainable Living",
+                    desc: "Integration of solar energy, water harvesting, and green materials into every home.",
+                    icon: Waves,
+                    benefits: ["Reduced Costs", "Healthier Living", "Future Proof"]
+                }
+            ],
+            gallery: [
+                "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=800&auto=format",
+                "https://images.unsplash.com/photo-1628744876497-eb30460be9f6?q=80&w=800&auto=format",
+                "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=800&auto=format"
+            ]
+        },
+        "commercial-projects": {
+            title: "Commercial Projects",
+            heroImage: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop",
+            description: "Our commercial constructions are designed to foster innovation and business growth. We build spaces that are not just functional but are landmarks of corporate identity.",
+            features: [
+                {
+                    title: "Corporate Offices",
+                    desc: "Dynamic work environments that boost productivity and reflect brand prestige.",
+                    icon: ShieldCheck,
+                    benefits: ["Modular Layouts", "Acoustic Excellence", "High Tech Integration"]
+                },
+                {
+                    title: "Retail & Malls",
+                    desc: "High-traffic commercial hubs designed for seamless visitor flow and maximum brand visibility.",
+                    icon: Zap,
+                    benefits: ["Prime Visibility", "Logistical Ease", "Cinematic Spaces"]
+                },
+                {
+                    title: "Infrastructure Support",
+                    desc: "Reliable structural solutions for large-scale commercial utility and connectivity.",
+                    icon: HardHat,
+                    benefits: ["Scalable Growth", "Max Safety", "Efficient Design"]
+                }
+            ],
+            gallery: [
+                "https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=800&auto=format",
+                "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format",
+                "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format"
+            ]
+        },
+        "renovation-works": {
+            title: "Renovation & Remodeling",
+            heroImage: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2070&auto=format&fit=crop",
+            description: "Breathing new life into existing structures. We handle everything from structural reinforcement to high-end interior makeovers with minimal disruption.",
+            features: [
+                {
+                    title: "Structural Restoration",
+                    desc: "Strengthening the core of aging buildings while maintaining historical or architectural value.",
+                    icon: HardHat,
+                    benefits: ["Extended Life", "Safety Upgrades", "Property Value Boost"]
+                },
+                {
+                    title: "Interior Modernization",
+                    desc: "Complete overhaul of internal spaces with modern materials, lighting, and finishes.",
+                    icon: Layout,
+                    benefits: ["Modern Aesthetic", "Better Functionality", "Energy Efficiency"]
+                },
+                {
+                    title: "Exterior Refacing",
+                    desc: "Transforming the outward appearance of buildings for a contemporary and premium look.",
+                    icon: Clock,
+                    benefits: ["First Impression", "Weather Protection", "Modern Materials"]
+                }
+            ],
+            gallery: [
+                "https://images.unsplash.com/photo-1503387762-592dea58ef23?q=80&w=800&auto=format",
+                "https://images.unsplash.com/photo-1516156008625-3a9d6067ffd5?q=80&w=800&auto=format",
+                "https://images.unsplash.com/photo-1534239233129-148493bc7df5?q=80&w=800&auto=format"
+            ]
+        },
+        "turnkey-projects": {
+            title: "Turnkey Projects",
+            heroImage: "https://images.unsplash.com/photo-1503387762-592dea58ef23?q=80&w=2070&auto=format&fit=crop",
+            description: "From the first brick to the final key handover, we manage every aspect of construction, procurement, and design. You provide the vision; we provide the keys.",
+            features: [
+                {
+                    title: "Conceptual Design",
+                    desc: "Full architectural planning and spatial layout by our expert design team.",
+                    icon: Layout,
+                    benefits: ["Holistic Planning", "Budget Accuracy", "Visual Previews"]
+                },
+                {
+                    title: "Procurement & Liaison",
+                    desc: "Hassle-free material sourcing and legal approvals with government authorities.",
+                    icon: ShieldCheck,
+                    benefits: ["Verified Quality", "Faster Approvals", "Single Point Contact"]
+                },
+                {
+                    title: "Execution & Fit-out",
+                    desc: "High-speed construction and interior finishing with strict quality control.",
+                    icon: HardHat,
+                    benefits: ["On-time Handover", "Premium Quality", "Zero Stress"]
+                }
+            ],
+            gallery: [
+                "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format",
+                "https://images.unsplash.com/photo-1504307651254-35680f3366d4?q=80&w=800&auto=format",
+                "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=800&auto=format"
+            ]
+        }
+    };
+
+
+    const currentService = serviceData[serviceId] || serviceData["residential-construction"];
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [serviceId]);
+
+    return (
+        <div className="bg-white">
+            <main>
+                {/* Hero Section */}
+                <section className="relative h-[60vh] flex items-center overflow-hidden">
+                    <img
+                        src={currentService.heroImage}
+                        alt={currentService.title}
+                        className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-x-0 bottom-0 h-full bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+
+                    <div className="container mx-auto px-4 relative z-10 pt-20">
+                        <motion.div
+                            initial={{ opacity: 0, x: -30 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            <Link to="/services" className="inline-flex items-center gap-2 text-white/60 hover:text-primary mb-8 transition-colors group">
+                                <ChevronLeft className="group-hover:-translate-x-1 transition-transform" />
+                                <span className="text-sm font-bold uppercase tracking-widest">Back to Services</span>
+                            </Link>
+                            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 uppercase tracking-tight">
+                                {currentService.title.split(' ')[0]} <br />
+                                <span className="text-primary">{currentService.title.split(' ').slice(1).join(' ')}</span>
+                            </h1>
+                            <p className="max-w-2xl text-lg md:text-xl text-slate-300 font-light leading-relaxed">
+                                {currentService.description}
+                            </p>
+                        </motion.div>
+                    </div>
+                </section>
+
+                {/* Service Breakdown */}
+                <section className="py-24 bg-white">
+                    <div className="container mx-auto px-4">
+                        <div className="text-center mb-20">
+                            <h2 className="text-sm font-bold text-primary uppercase tracking-[0.3em] mb-4">Core Offerings</h2>
+                            <h3 className="text-4xl font-bold text-secondary-dark">Comprehensive Solutions</h3>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+                            {currentService.features.map((feature, index) => (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: index * 0.2, duration: 0.6 }}
+                                    className="group p-10 rounded-[3rem] bg-slate-50 border border-slate-100 hover:bg-white hover:shadow-2xl hover:border-primary/20 transition-all duration-500"
+                                >
+                                    <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                                        <feature.icon size={32} />
+                                    </div>
+                                    <h4 className="text-2xl font-bold text-secondary-dark mb-4">{feature.title}</h4>
+                                    <p className="text-slate-500 mb-8 leading-relaxed">
+                                        {feature.desc}
+                                    </p>
+
+                                    <div className="space-y-4">
+                                        {feature.benefits.map((benefit, i) => (
+                                            <div key={i} className="flex items-center gap-3 text-sm font-bold text-slate-700">
+                                                <div className="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                                                {benefit}
+                                            </div>
+                                        ))}
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* Visual Support Gallery */}
+                <section className="py-24 bg-secondary-dark relative">
+                    <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 blur-[120px]"></div>
+                    <div className="container mx-auto px-4 relative z-10">
+                        <div className="flex flex-col lg:flex-row items-end justify-between mb-16 gap-8">
+                            <div className="max-w-xl">
+                                <h2 className="text-sm font-bold text-primary uppercase tracking-[0.3em] mb-4">Quality in Motion</h2>
+                                <h3 className="text-4xl font-bold text-white mb-6">Visual Proof of our <br />Engineering Excellence</h3>
+                            </div>
+                            <button className="px-8 py-4 rounded-full bg-primary text-white font-bold hover:shadow-primary/20 hover:scale-105 transition-all text-sm uppercase tracking-widest flex items-center gap-2">
+                                View Portfolio <ArrowRight size={18} />
+                            </button>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            {currentService.gallery.map((img, i) => (
+                                <div key={i} className={`relative rounded-[2.5rem] overflow-hidden group ${i === 1 ? 'md:translate-y-12' : ''}`}>
+                                    <img
+                                        src={img}
+                                        alt="Gallery"
+                                        className="w-full h-[400px] object-cover group-hover:scale-110 transition-transform duration-700"
+                                    />
+                                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                                        <div className="w-16 h-16 rounded-full glass border border-white/20 flex items-center justify-center text-white">
+                                            <CheckCircle2 size={32} />
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                <CTASection />
+            </main>
+        </div>
+    );
+};
+
+export default ServiceDetailView;
