@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Twitter, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import images from '../../data/images';
 
 const Footer = () => {
     return (
@@ -8,8 +9,8 @@ const Footer = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                 <div>
                     <div className="flex items-center space-x-2 mb-6">
-                        <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-xl">
-                            V
+                        <div className="w-10 h-10 bg-white p-1 rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                            <img src={images.logo} alt="Vishaka Constructions" className="w-10 h-10 object-contain" />
                         </div>
                         <Link to="/" className="text-xl font-bold tracking-tight hover:text-primary transition-colors">
                             VISHAKA <span className="font-light text-primary">CONSTRUCTIONS</span>

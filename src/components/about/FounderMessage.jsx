@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Quote } from 'lucide-react';
-import founder from "../../assets/images/ceo-vishaka.png"
+import images from '../../data/images';
 
 const FounderMessage = () => {
   return (
@@ -56,7 +56,7 @@ const FounderMessage = () => {
               <div className="absolute -bottom-4 -right-4 w-12 h-12 border-b-2 border-r-2 border-primary/30 z-20"></div>
 
               <img
-                src={founder}
+                src={images.founder}
                 alt="Founder"
                 className="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-1000 shadow-[0_50px_100px_rgba(0,0,0,0.8)]"
               />

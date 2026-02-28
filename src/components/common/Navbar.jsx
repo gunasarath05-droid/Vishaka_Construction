@@ -6,6 +6,7 @@ import {
     Phone, ArrowRight, Building2, Home, Info, Briefcase, Users, Mail
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import images from "../../data/images"
 
 const navLinks = [
     { name: 'Home', path: '/', icon: Home },
@@ -78,7 +79,7 @@ const Navbar = () => {
                         {/* Logo */}
                         <Link to="/" className="flex items-center gap-3 flex-shrink-0">
                             <img
-                                src="/src/assets/images/Logo.png"
+                                src={images.logo}
                                 alt="Vishaka Constructions"
                                 className="w-10 h-10 object-contain"
                             />
