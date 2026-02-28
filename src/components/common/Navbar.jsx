@@ -70,8 +70,8 @@ const Navbar = () => {
     return (
         <>
             <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled
-                    ? 'bg-white/90 backdrop-blur-xl border-b border-slate-100 shadow-lg shadow-slate-100/50 py-2'
-                    : 'bg-transparent py-4'
+                ? 'bg-white/90 backdrop-blur-xl border-b border-slate-100 shadow-lg shadow-slate-100/50 py-2'
+                : 'bg-transparent py-4'
                 }`}>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between h-16 items-center">
@@ -104,8 +104,8 @@ const Navbar = () => {
                                         onMouseLeave={() => setActiveDropdown(null)}
                                     >
                                         <button className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-bold transition-all ${isActive(link.path)
-                                                ? 'text-primary'
-                                                : scrolled ? 'text-slate-600 hover:text-primary hover:bg-slate-50' : 'text-white/80 hover:text-white hover:bg-white/10'
+                                            ? 'text-primary'
+                                            : scrolled ? 'text-slate-600 hover:text-primary hover:bg-slate-50' : 'text-white/80 hover:text-white hover:bg-white/10'
                                             }`}>
                                             {link.name}
                                             <ChevronDown size={13} className={`transition-transform duration-300 ${activeDropdown === link.dropdownId ? 'rotate-180 text-primary' : ''}`} />
@@ -146,8 +146,8 @@ const Navbar = () => {
                                         key={link.name}
                                         to={link.path}
                                         className={`relative px-3 py-2 rounded-lg text-sm font-bold transition-all ${isActive(link.path)
-                                                ? 'text-primary'
-                                                : scrolled ? 'text-slate-600 hover:text-primary hover:bg-slate-50' : 'text-white/80 hover:text-white hover:bg-white/10'
+                                            ? 'text-primary'
+                                            : scrolled ? 'text-slate-600 hover:text-primary hover:bg-slate-50' : 'text-white/80 hover:text-white hover:bg-white/10'
                                             }`}
                                     >
                                         {link.name}
@@ -164,8 +164,8 @@ const Navbar = () => {
                             <Link
                                 to="/contact"
                                 className={`ml-2 flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-black transition-all duration-300 hover:scale-105 active:scale-95 ${scrolled
-                                        ? 'bg-secondary-dark text-white hover:bg-primary shadow-lg shadow-slate-900/10'
-                                        : 'bg-white text-secondary-dark hover:bg-primary hover:text-white shadow-lg shadow-white/10'
+                                    ? 'bg-secondary-dark text-white hover:bg-primary shadow-lg shadow-slate-900/10'
+                                    : 'bg-white text-secondary-dark hover:bg-primary hover:text-white shadow-lg shadow-white/10'
                                     }`}
                             >
                                 <Phone size={14} />
@@ -177,8 +177,8 @@ const Navbar = () => {
                         <button
                             onClick={() => setIsOpen(!isOpen)}
                             className={`md:hidden w-10 h-10 rounded-xl flex items-center justify-center transition-all ${isOpen || scrolled
-                                    ? 'bg-slate-100 text-secondary-dark'
-                                    : 'bg-white/10 text-white hover:bg-white/20'
+                                ? 'bg-slate-100 text-secondary-dark'
+                                : 'bg-white/10 text-white hover:bg-white/20'
                                 }`}
                             aria-label="Toggle menu"
                         >
@@ -222,8 +222,8 @@ const Navbar = () => {
                             {/* Drawer Header */}
                             <div className="flex items-center justify-between p-6 border-b border-slate-100">
                                 <div className="flex items-center gap-3">
-                                    <img src={images.logo} alt="" className="w-8 h-8 object-contain" />
-                                    <span className="text-base font-black text-secondary-dark tracking-tight">VISHAKA</span>
+                                    <img src={images.logo} alt="Vishaka Constructions" className="w-9 h-9 object-contain" />
+                                    <span className="text-lg font-black text-primary tracking-tight leading-none uppercase">VISHAKA construction</span>
                                 </div>
                                 <button
                                     onClick={() => setIsOpen(false)}
@@ -253,13 +253,13 @@ const Navbar = () => {
                                                         to={sub.path}
                                                         onClick={() => setIsOpen(false)}
                                                         className={`flex items-center gap-3 px-3 py-3 rounded-xl transition-all group ${isActive(sub.path)
-                                                                ? 'bg-primary/5 text-primary'
-                                                                : 'text-slate-700 hover:bg-slate-50 hover:text-primary'
+                                                            ? 'bg-primary/5 text-primary'
+                                                            : 'text-slate-700 hover:bg-slate-50 hover:text-primary'
                                                             }`}
                                                     >
                                                         <div className={`w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 transition-all ${isActive(sub.path)
-                                                                ? 'bg-primary text-white'
-                                                                : 'bg-slate-100 text-slate-500 group-hover:bg-primary/10 group-hover:text-primary'
+                                                            ? 'bg-primary text-white'
+                                                            : 'bg-slate-100 text-slate-500 group-hover:bg-primary/10 group-hover:text-primary'
                                                             }`}>
                                                             <sub.icon size={16} />
                                                         </div>
@@ -276,13 +276,13 @@ const Navbar = () => {
                                                 to={link.path}
                                                 onClick={() => setIsOpen(false)}
                                                 className={`flex items-center gap-3 px-3 py-3 rounded-xl transition-all group ${isActive(link.path)
-                                                        ? 'bg-primary/5 text-primary'
-                                                        : 'text-slate-700 hover:bg-slate-50 hover:text-primary'
+                                                    ? 'bg-primary/5 text-primary'
+                                                    : 'text-slate-700 hover:bg-slate-50 hover:text-primary'
                                                     }`}
                                             >
                                                 <div className={`w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 transition-all ${isActive(link.path)
-                                                        ? 'bg-primary text-white'
-                                                        : 'bg-slate-100 text-slate-500 group-hover:bg-primary/10 group-hover:text-primary'
+                                                    ? 'bg-primary text-white'
+                                                    : 'bg-slate-100 text-slate-500 group-hover:bg-primary/10 group-hover:text-primary'
                                                     }`}>
                                                     <link.icon size={16} />
                                                 </div>
@@ -294,7 +294,7 @@ const Navbar = () => {
                                 ))}
                             </div>
 
-                            
+
                         </motion.div>
                     </>
                 )}
