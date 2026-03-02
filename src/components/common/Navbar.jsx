@@ -5,7 +5,7 @@ import {
     Video, Newspaper, Clock, CheckCircle2,
     Phone, ArrowRight, Building2, Home, Info, Briefcase, Users, Mail
 } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import images from "../../data/images"
 
 const navLinks = [
@@ -45,7 +45,13 @@ const Navbar = () => {
     const location = useLocation();
     const dropdownRef = useRef(null);
 
-    useEffect(() => { setIsOpen(false); setActiveDropdown(null); }, [location.pathname]);
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsOpen(false);
+            setActiveDropdown(null);
+        }, 0);
+        return () => clearTimeout(timer);
+    }, [location.pathname]);
 
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 20);

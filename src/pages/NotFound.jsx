@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Home, ArrowRight, Building2, HardHat } from 'lucide-react';
 
+const PARTICLES = Array.from({ length: 18 }, (_, i) => ({
+    id: i,
+    size: Math.random() * 6 + 3,
+    x: Math.random() * 100,
+    delay: Math.random() * 4,
+    duration: Math.random() * 6 + 8,
+}));
+
 const NotFound = () => {
-    // Floating particles - Memoized to maintain purity
-    const particles = useMemo(() => Array.from({ length: 18 }, (_, i) => ({
-        id: i,
-        size: Math.random() * 6 + 3,
-        x: Math.random() * 100,
-        delay: Math.random() * 4,
-        duration: Math.random() * 6 + 8,
-    })), []);
 
     return (
         <div className="relative min-h-screen bg-secondary-dark overflow-hidden flex flex-col items-center justify-center px-4">
@@ -30,7 +30,7 @@ const NotFound = () => {
             <div className="absolute bottom-[-15%] left-[-5%] w-[500px] h-[500px] bg-primary/10 rounded-full blur-[140px] pointer-events-none" />
 
             {/* Floating particles */}
-            {particles.map((p) => (
+            {PARTICLES.map((p) => (
                 <motion.div
                     key={p.id}
                     className="absolute rounded-full bg-primary/30"
