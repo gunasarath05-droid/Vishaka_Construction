@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Clock, MapPin, Calendar, ChevronRight, Activity, ShieldCheck, Award, Box } from 'lucide-react';
+import { Clock, MapPin, Calendar, ChevronRight, Activity, ShieldCheck, Award, Building2 as Box } from 'lucide-react';
 import CTASection from '../components/common/CTASection';
 
 // Swiper imports

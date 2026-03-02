@@ -18,16 +18,8 @@
 
 body {
   @apply bg-white text-slate-900 font-sans;
-  @media (pointer: fine) {
-    cursor: none;
-  }
 }
 
-@media (pointer: fine) {
-  a, button, [role="button"] {
-    cursor: none !important;
-  }
-}
 
 .glass {
   background: rgba(255, 255, 255, 0.7);

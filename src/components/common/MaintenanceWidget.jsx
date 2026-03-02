@@ -53,7 +53,7 @@ const MaintenanceWidget = () => {
                             initial={{ opacity: 0, y: 100, scale: 0.9 }}
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             exit={{ opacity: 0, y: 100, scale: 0.9 }}
-                            className="fixed bottom-28 inset-x-4 md:inset-x-auto md:right-8 md:w-[480px] bg-white rounded-[3rem] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.2)] border border-slate-100 z-[120] overflow-hidden"
+                            className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:top-auto md:left-auto md:bottom-28 md:right-8 md:translate-x-0 md:translate-y-0 w-[calc(100%-2rem)] md:w-[480px] bg-white rounded-[3rem] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.2)] border border-slate-100 z-[120] overflow-hidden"
                         >
                             <div className="p-8 md:p-10">
                                 <div className="flex justify-between items-center mb-10">

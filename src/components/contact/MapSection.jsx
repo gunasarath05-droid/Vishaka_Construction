@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Navigation, Phone, Mail, Clock, ExternalLink } from 'lucide-react';
+import images from '../../data/images';
 
 const MapSection = () => {
     return (
@@ -30,7 +31,7 @@ const MapSection = () => {
                     {/* Office Image Header */}
                     <div className="h-48 w-full rounded-[2rem] overflow-hidden mb-6 relative">
                         <img
-                            src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200"
+                            src={images.project1}
                             alt="Vishaka Constructions Office"
                             className="w-full h-full object-cover"
                         />

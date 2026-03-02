@@ -58,7 +58,7 @@ const FounderMessage = () => {
               <img
                 src={images.founder}
                 alt="Founder"
-                className="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-1000 shadow-[0_50px_100px_rgba(0,0,0,0.8)]"
+                className="w-full h-full object-cover filter transition-all duration-1000 shadow-[0_50px_100px_rgba(0,0,0,0.8)]"
               />
 
               {/* Image Stats Overlay */}

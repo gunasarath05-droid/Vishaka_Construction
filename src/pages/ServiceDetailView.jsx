@@ -1,6 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
 import {
     ChevronLeft,
     ArrowRight,
@@ -11,10 +19,11 @@ import {
     Layout,
     Clock,
     Waves,
-    Building2
+    Building2 as Building
 } from 'lucide-react';
 
 import CTASection from '../components/common/CTASection';
+import images from '../data/images';
 
 const ServiceDetailView = () => {
     const { serviceId } = useParams();
@@ -23,7 +32,7 @@ const ServiceDetailView = () => {
     const serviceData = {
         "residential-construction": {
             title: "Residential Construction",
-            heroImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop",
+            heroImage: images.project1,
             description: "We specialize in crafting bespoke living spaces that combine aesthetic brilliance with structural perfection. Our residential projects range from ultra-luxury villas to smart modern apartment complexes.",
             features: [
                 {
@@ -35,7 +44,7 @@ const ServiceDetailView = () => {
                 {
                     title: "Modern Apartment Towers",
                     desc: "High-density living solutions with a focus on community, light, and modern amenities.",
-                    icon: Building2, // Imported from lucide-react? Wait, I need to check Building2
+                    icon: Building,
                     benefits: ["Strategic Locations", "Smart Facilities", "Eco-friendly Design"]
                 },
                 {
@@ -46,14 +55,15 @@ const ServiceDetailView = () => {
                 }
             ],
             gallery: [
-                "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=800&auto=format",
-                "https://images.unsplash.com/photo-1628744876497-eb30460be9f6?q=80&w=800&auto=format",
-                "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=800&auto=format"
+                images.gallery1,
+                images.gallery2,
+                images.gallery3,
+                images.gallery4,
             ]
         },
         "commercial-projects": {
             title: "Commercial Projects",
-            heroImage: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop",
+            heroImage: images.project2,
             description: "Our commercial constructions are designed to foster innovation and business growth. We build spaces that are not just functional but are landmarks of corporate identity.",
             features: [
                 {
@@ -76,14 +86,14 @@ const ServiceDetailView = () => {
                 }
             ],
             gallery: [
-                "https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=800&auto=format",
-                "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format",
-                "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format"
-            ]
+                images.gallery1,
+                images.gallery2,
+                images.gallery3,
+                images.gallery4,]
         },
         "renovation-works": {
             title: "Renovation & Remodeling",
-            heroImage: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2070&auto=format&fit=crop",
+            heroImage: images.project3,
             description: "Breathing new life into existing structures. We handle everything from structural reinforcement to high-end interior makeovers with minimal disruption.",
             features: [
                 {
@@ -106,14 +116,15 @@ const ServiceDetailView = () => {
                 }
             ],
             gallery: [
-                "https://images.unsplash.com/photo-1503387762-592dea58ef23?q=80&w=800&auto=format",
-                "https://images.unsplash.com/photo-1516156008625-3a9d6067ffd5?q=80&w=800&auto=format",
-                "https://images.unsplash.com/photo-1534239233129-148493bc7df5?q=80&w=800&auto=format"
+                images.gallery1,
+                images.gallery2,
+                images.gallery3,
+                images.gallery4,
             ]
         },
         "turnkey-projects": {
             title: "Turnkey Projects",
-            heroImage: "https://images.unsplash.com/photo-1503387762-592dea58ef23?q=80&w=2070&auto=format&fit=crop",
+            heroImage: images.project4,
             description: "From the first brick to the final key handover, we manage every aspect of construction, procurement, and design. You provide the vision; we provide the keys.",
             features: [
                 {
@@ -136,15 +147,17 @@ const ServiceDetailView = () => {
                 }
             ],
             gallery: [
-                "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format",
-                "https://images.unsplash.com/photo-1504307651254-35680f3366d4?q=80&w=800&auto=format",
-                "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=800&auto=format"
+                images.gallery1,
+                images.gallery2,
+                images.gallery3,
+                images.gallery4,
             ]
         }
     };
 
 
     const currentService = serviceData[serviceId] || serviceData["residential-construction"];
+    const [hoveredImage, setHoveredImage] = useState(null);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -236,24 +249,85 @@ const ServiceDetailView = () => {
                             </button>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            {currentService.gallery.map((img, i) => (
-                                <div key={i} className={`relative rounded-[2.5rem] overflow-hidden group ${i === 1 ? 'md:translate-y-12' : ''}`}>
-                                    <img
-                                        src={img}
-                                        alt="Gallery"
-                                        className="w-full h-[400px] object-cover group-hover:scale-110 transition-transform duration-700"
-                                    />
-                                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                                        <div className="w-16 h-16 rounded-full glass border border-white/20 flex items-center justify-center text-white">
-                                            <CheckCircle2 size={32} />
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
+                        <div className="gallery-container">
+                            <Swiper
+                                modules={[Autoplay, Pagination, Navigation]}
+                                spaceBetween={30}
+                                slidesPerView={1}
+                                centeredSlides={true}
+                                loop={true}
+                                autoplay={{
+                                    delay: 3500,
+                                    disableOnInteraction: false,
+                                }}
+                                breakpoints={{
+                                    640: {
+                                        slidesPerView: 2,
+                                    },
+                                    1024: {
+                                        slidesPerView: 3,
+                                    }
+                                }}
+                                className="pb-16"
+                            >
+                                {currentService.gallery.map((img, i) => (
+                                    <SwiperSlide key={i}>
+                                        <motion.div
+                                            className="relative rounded-[2.5rem] overflow-hidden group cursor-pointer"
+                                            onMouseEnter={() => setHoveredImage(img)}
+                                            onMouseLeave={() => setHoveredImage(null)}
+                                            whileHover={{ y: -10 }}
+                                            transition={{ duration: 0.4 }}
+                                        >
+                                            <img
+                                                src={img}
+                                                alt="Gallery"
+                                                className="w-full h-[450px] object-cover group-hover:scale-110 transition-transform duration-700"
+                                            />
+                                            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col items-center justify-center gap-4">
+                                                <div className="w-16 h-16 rounded-full glass border border-white/20 flex items-center justify-center text-white">
+                                                    <CheckCircle2 size={32} />
+                                                </div>
+                                                <p className="text-white font-bold uppercase tracking-widest text-xs">View Detail</p>
+                                            </div>
+                                        </motion.div>
+                                    </SwiperSlide>
+                                ))}
+                            </Swiper>
                         </div>
                     </div>
                 </section>
+
+                {/* Hover Image Popup */}
+                <AnimatePresence>
+                    {hoveredImage && (
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="fixed inset-0 z-[99999] flex items-center justify-center bg-black/90 p-4 md:p-12 pointer-events-none"
+                        >
+                            <motion.div
+                                initial={{ scale: 0.9, opacity: 0 }}
+                                animate={{ scale: 1, opacity: 1 }}
+                                exit={{ scale: 0.9, opacity: 0 }}
+                                transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                                className="relative max-w-5xl w-full aspect-video rounded-3xl overflow-hidden shadow-2xl border border-white/10"
+                            >
+                                <img
+                                    src={hoveredImage}
+                                    alt="Preview"
+                                    className="w-full h-full object-cover"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                                <div className="absolute bottom-8 left-8">
+                                    <h4 className="text-white text-2xl font-bold uppercase tracking-wider">{currentService.title}</h4>
+                                    <p className="text-primary font-bold uppercase tracking-[0.3em] text-sm">Project Spotlight</p>
+                                </div>
+                            </motion.div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
 
                 <CTASection />
             </main>
