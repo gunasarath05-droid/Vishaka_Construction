@@ -26,7 +26,7 @@ const Blog = () => {
   return (
     <div className="bg-slate-50 min-h-screen">
       {/* Standardized Blog Hero */}
-      <section className="relative pt-32 pb-24 bg-secondary-dark overflow-hidden">
+      <section className="relative pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-20 md:pb-24 bg-secondary-dark overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full">
           <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] animate-pulse"></div>
           <div className="absolute inset-0 opacity-[0.03]"
@@ -44,7 +44,7 @@ const Blog = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-sm font-bold text-primary uppercase tracking-[0.3em] mb-6">Press & Knowledge Hub</h2>
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 sm:mb-8 tracking-tight">
               Latest <br /> <span className="text-primary italic">Insights</span>
             </h1>
             <p className="max-w-2xl mx-auto text-lg text-slate-400 font-light leading-relaxed">
@@ -68,7 +68,7 @@ const Blog = () => {
       </section>
 
       {/* Articles Section */}
-      <section className="py-32">
+      <section className="py-16 sm:py-20 md:py-24 lg:py-32">
         <div className="container mx-auto px-4">
           {/* Ensure enough slides for loop mode (min 6 recommended) */}
           {(() => {
@@ -160,11 +160,11 @@ const Blog = () => {
                 </div>
 
                 {/* Newsletter Cleanup */}
-                <div className="mt-40 rounded-[4rem] bg-secondary-dark p-12 lg:p-24 relative overflow-hidden group">
+                <div className="mt-16 sm:mt-24 md:mt-32 lg:mt-40 rounded-[2.5rem] sm:rounded-[4rem] bg-secondary-dark p-8 sm:p-12 md:p-16 lg:p-24 relative overflow-hidden group">
                   <div className="absolute top-[-20%] right-[-10%] w-[500px] h-[500px] bg-primary/20 rounded-full blur-[100px] group-hover:bg-primary/30 transition-colors duration-1000"></div>
                   <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
                     <div className="max-w-xl text-center lg:text-left text-white">
-                      <h2 className="text-4xl lg:text-6xl font-black mb-6 tracking-tight uppercase">Knowledge <br /> In Your Inbox</h2>
+                      <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 sm:mb-6 tracking-tight uppercase">Knowledge <br /> In Your Inbox</h2>
                       <p className="text-slate-400 text-lg md:text-xl font-light leading-relaxed">Subscribe to our newsletter and get exclusive construction tips and project insights delivered to your inbox.</p>
                     </div>
                     <div className="flex w-full max-w-md relative">

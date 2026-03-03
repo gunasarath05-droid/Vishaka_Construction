@@ -76,7 +76,7 @@ const TestimonialsPreview = () => {
             transition={{ duration: 0.6 }}
           >
             <p className="text-teal-600 font-bold text-sm tracking-widest uppercase mb-4">Testimonials</p>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight">What Our Clients Say</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 leading-tight">What Our Clients Say</h2>
           </motion.div>
         </div>
 
@@ -112,7 +112,7 @@ const TestimonialsPreview = () => {
                       <div className="absolute -inset-1 bg-gradient-to-b from-teal-500/10 to-transparent blur-2xl opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"></div>
 
                       {/* Main Card */}
-                      <div className="relative bg-white p-8 md:p-10 rounded-[2.5rem] shadow-[0_15px_40px_-15px_rgba(0,0,0,0.05)] border border-slate-100 h-[450px] flex flex-col transition-all duration-500 group-hover/card:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.12)] group-hover/card:border-teal-500/20">
+                      <div className="relative bg-white p-6 sm:p-8 md:p-10 rounded-[2rem] sm:rounded-[2.5rem] shadow-[0_15px_40px_-15px_rgba(0,0,0,0.05)] border border-slate-100 min-h-[380px] sm:min-h-[420px] md:min-h-[450px] flex flex-col transition-all duration-500 group-hover/card:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.12)] group-hover/card:border-teal-500/20">
 
                         <div className="flex justify-between items-start mb-6">
                           <div className="flex space-x-1">

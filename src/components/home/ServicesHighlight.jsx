@@ -147,7 +147,7 @@ const ServicesHighlight = () => {
   ];
 
   return (
-    <section className="py-32 bg-white relative overflow-hidden" id="services">
+    <section className="py-16 sm:py-20 md:py-24 lg:py-32 bg-white relative overflow-hidden" id="services">
 
       {/* Architectural Background Elements */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none">
@@ -189,7 +189,7 @@ const ServicesHighlight = () => {
               <div className="w-16 h-[2px] bg-teal-500"></div>
             </div>
 
-            <h2 className="text-4xl md:text-6xl font-black text-slate-900 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 leading-tight">
               Engineering Solutions for <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#004D4D] to-teal-500">Every Modern Need</span>
             </h2>
           </motion.div>
@@ -218,8 +218,8 @@ const ServicesHighlight = () => {
                   <SwiperSlide key={`${service.id}-${idx}`} className="py-12 px-2 overflow-visible">
                     {({ isActive }) => (
                       <div className={`h-full transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${isActive
-                          ? 'scale-[1.05] opacity-100 blur-0 translate-y-0'
-                          : 'scale-90 opacity-40 blur-[1.5px] translate-y-4'
+                        ? 'scale-[1.05] opacity-100 blur-0 translate-y-0'
+                        : 'scale-90 opacity-40 blur-[1.5px] translate-y-4'
                         }`}>
                         <ServiceCard service={service} />
                       </div>

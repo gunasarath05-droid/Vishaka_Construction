@@ -66,7 +66,7 @@ const Gallery = () => {
       image: images.project6,
       type: 'image'
     },
-   {
+    {
       id: 7,
       title: "Crystal Heights Exterior",
       category: 'construction',
@@ -119,7 +119,7 @@ const Gallery = () => {
   return (
     <div className="bg-white min-h-screen">
       {/* Standardized Gallery Hero */}
-      <section className="relative pt-32 pb-24 bg-secondary-dark overflow-hidden">
+      <section className="relative pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-20 md:pb-24 bg-secondary-dark overflow-hidden">
         {/* Background Decorative Elements */}
         <div className="absolute top-0 left-0 w-full h-full">
           <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] animate-pulse"></div>
@@ -138,7 +138,7 @@ const Gallery = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-sm font-bold text-primary uppercase tracking-[0.3em] mb-6">Visual Portfolio</h2>
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 sm:mb-8 tracking-tight">
               Engineering <br /> <span className="text-primary italic">Excellence</span>
             </h1>
             <p className="max-w-2xl mx-auto text-lg text-slate-400 font-light leading-relaxed">
@@ -146,12 +146,12 @@ const Gallery = () => {
             </p>
 
             {/* Filters */}
-            <div className="flex flex-wrap justify-center gap-4 mt-12 bg-white/5 p-4 rounded-[2.5rem] border border-white/10 backdrop-blur-xl w-fit mx-auto">
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mt-10 sm:mt-12 bg-white/5 p-2 sm:p-4 rounded-[2rem] sm:rounded-[2.5rem] border border-white/10 backdrop-blur-xl w-fit mx-auto">
               {categories.map((cat) => (
                 <button
                   key={cat.id}
                   onClick={() => setFilter(cat.id)}
-                  className={`px-8 py-4 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all duration-500 ${filter === cat.id
+                  className={`px-4 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all duration-500 ${filter === cat.id
                     ? 'bg-primary text-white shadow-2xl shadow-primary/40 scale-105'
                     : 'text-white/40 hover:text-white hover:bg-white/5'
                     }`}
@@ -205,7 +205,7 @@ const Gallery = () => {
           </motion.div>
 
           {/* Stats Loader Placeholder */}
-          <div className="mt-20 flex flex-wrap justify-center gap-16 border-t border-slate-100 pt-20">
+          <div className="mt-12 sm:mt-16 md:mt-20 flex flex-wrap justify-center gap-8 sm:gap-12 md:gap-16 border-t border-slate-100 pt-12 sm:pt-16 md:pt-20">
             <div className="text-center">
               <h5 className="text-4xl font-black text-secondary-dark mb-2">2.5k+</h5>
               <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Construction Shots</p>

@@ -58,7 +58,7 @@ const WhyChooseUs = () => {
   return (
     <section className="py-24 bg-secondary-dark relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-16">
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
           {/* Content Side */}
           <div className="lg:w-1/2">
             <motion.div
@@ -67,7 +67,7 @@ const WhyChooseUs = () => {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-sm font-bold text-primary uppercase tracking-[0.3em] mb-4">Advantages</h2>
-              <h3 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
+              <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 sm:mb-8 leading-tight">
                 Why We Are The <br />
                 <span className="text-primary italic">Preferred Choice</span>
               </h3>

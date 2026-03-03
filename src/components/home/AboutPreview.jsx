@@ -44,7 +44,7 @@ const itemVariants = {
 const AboutPreview = () => {
   const navigate = useNavigate();
   return (
-    <section className="py-12  md:py-24 lg:py-24 pb-12 bg-white relative overflow-hidden" id="about">
+    <section className="py-12 md:py-24 lg:py-24 bg-white relative overflow-hidden" id="about">
 
       {/* Architectural Background Elements */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden select-none">
@@ -65,11 +65,11 @@ const AboutPreview = () => {
         <div className="absolute top-0 right-[15%] w-[1px] h-full bg-slate-100 hidden lg:block"></div>
       </div>
 
-      <div className="max-w-[1600px] mx-auto px-4 md:px-12 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-24 items-center">
 
           {/* Left: Visual Composition */}
-          <div className="lg:col-span-6 relative">
+          <div className="lg:col-span-6 relative pb-16 sm:pb-20 lg:pb-0">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -78,7 +78,7 @@ const AboutPreview = () => {
               className="relative"
             >
               {/* Main Image Frame with High-End Border */}
-              <div className="relative rounded-[3rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] border-[12px] border-white bg-slate-100 aspect-[4/5] lg:aspect-[4/4.5]">
+              <div className="relative rounded-[2rem] sm:rounded-[3rem] overflow-hidden shadow-[0_30px_80px_-20px_rgba(0,0,0,0.15)] border-[8px] sm:border-[12px] border-white bg-slate-100 aspect-[4/5] lg:aspect-[4/4.5]">
                 <img
                   src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200"
                   alt="Vishaka Construction Excellence"
@@ -98,7 +98,7 @@ const AboutPreview = () => {
                 initial={{ opacity: 0, scale: 0.9, y: 30 }}
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.8 }}
-                className="absolute -bottom-10 -right-2 lg:-right-12 bg-slate-900 text-white p-10 rounded-[2.5rem] shadow-2xl z-20 w-72 md:w-80 border-t border-slate-700"
+                className="absolute -bottom-14 left-4 right-4 sm:left-auto sm:right-auto sm:-bottom-10 sm:-right-2 lg:-right-12 bg-slate-900 text-white p-7 sm:p-10 rounded-[2rem] sm:rounded-[2.5rem] shadow-2xl z-20 w-auto sm:w-72 md:w-80 border-t border-slate-700"
               >
                 <div className="flex items-center space-x-3 mb-6">
                   <div className="w-8 h-[1px] bg-teal-500"></div>
@@ -149,7 +149,7 @@ const AboutPreview = () => {
                 <div className="w-16 h-[2px] bg-teal-500/20"></div>
               </motion.div>
 
-              <motion.h2 variants={itemVariants} className="text-4xl md:text-6xl font-black text-slate-900 mb-8 leading-tight">
+              <motion.h2 variants={itemVariants} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-6 sm:mb-8 leading-tight">
                 Transforming Concrete <span className="italic font-light">Visions</span> Into <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#004D4D] to-teal-500">Stunning Reality</span>
               </motion.h2>
 

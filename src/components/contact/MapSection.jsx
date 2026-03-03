@@ -5,7 +5,7 @@ import images from '../../data/images';
 
 const MapSection = () => {
     return (
-        <section className="relative h-[700px] w-full bg-slate-200 overflow-hidden group">
+        <section className="relative h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] w-full bg-slate-200 overflow-hidden group">
             {/* Embedded Google Map */}
             <div className="absolute inset-0 grayscale contrast-[1.1] brightness-[0.9] group-hover:grayscale-0 group-hover:contrast-100 group-hover:brightness-100 transition-all duration-[1.5s] ease-in-out">
                 <iframe
@@ -22,11 +22,11 @@ const MapSection = () => {
             </div>
 
             {/* Interactive Office Card - Revealed on Hover */}
-            <div className="absolute inset-0 pointer-events-none flex items-center justify-center md:justify-start md:pl-20">
+            <div className="absolute inset-0 pointer-events-none flex items-end lg:items-center justify-center lg:justify-start lg:pl-20 pb-4 lg:pb-0">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9, y: 20 }}
                     whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                    className="pointer-events-auto bg-white/90 backdrop-blur-xl p-2 rounded-[2.5rem] shadow-2xl border border-white max-w-[380px] w-full mx-4 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-700 ease-out flex flex-col overflow-hidden"
+                    className="pointer-events-auto bg-white/90 backdrop-blur-xl p-2 rounded-[2.5rem] shadow-2xl border border-white max-w-[340px] sm:max-w-[380px] w-full mx-4 opacity-100 lg:opacity-0 scale-100 lg:scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-700 ease-out flex flex-col overflow-hidden"
                 >
                     {/* Office Image Header */}
                     <div className="h-48 w-full rounded-[2rem] overflow-hidden mb-6 relative">

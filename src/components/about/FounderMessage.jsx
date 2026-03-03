@@ -5,7 +5,7 @@ import images from '../../data/images';
 
 const FounderMessage = () => {
   return (
-    <section className="py-32 bg-[#020808] relative overflow-hidden">
+    <section className="py-16 sm:py-20 md:py-24 lg:py-32 bg-[#020808] relative overflow-hidden">
       {/* Architectural Blueprint Background */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 opacity-[0.07]"
@@ -41,14 +41,14 @@ const FounderMessage = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-0">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-0">
 
           {/* Visual Block - Portrait */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
-            className="lg:w-1/2 relative flex justify-start lg:pl-12"
+            className="lg:w-1/2 relative flex justify-center lg:justify-start lg:pl-12"
           >
             <div className="relative w-full max-w-md aspect-[4/5] z-10">
               {/* Corner Framing */}
@@ -77,12 +77,12 @@ const FounderMessage = () => {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="lg:w-7/12 lg:-ml-32 z-20"
+            className="w-full lg:w-7/12 lg:-ml-32 z-20"
           >
-            <div className="bg-white/5 backdrop-blur-3xl border border-white/10 p-10 md:p-16 rounded-[2rem] shadow-[0_40px_80px_rgba(0,0,0,0.5)]">
+            <div className="bg-white/5 backdrop-blur-3xl border border-white/10 p-7 sm:p-10 md:p-16 rounded-[2rem] shadow-[0_40px_80px_rgba(0,0,0,0.5)]">
               <Quote className="text-primary mb-8 opacity-60" size={40} />
 
-              <h2 className="text-3xl md:text-5xl font-light text-white mb-10 leading-[1.2] tracking-wide">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white mb-8 sm:mb-10 leading-[1.2] tracking-wide">
                 Architecture is a <span className="font-bold text-primary italic">Visual Art</span>, and the buildings speak for themselves.
               </h2>
 

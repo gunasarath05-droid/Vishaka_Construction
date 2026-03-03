@@ -23,7 +23,7 @@ const OngoingProjects = () => {
   return (
     <div className="bg-white min-h-screen">
       {/* Standardized Hero Section */}
-      <section className="relative pt-40 pb-32 bg-secondary-dark overflow-hidden">
+      <section className="relative pt-28 sm:pt-32 md:pt-40 pb-20 sm:pb-28 md:pb-32 bg-secondary-dark overflow-hidden">
         {/* Background Decorative Elements */}
         <div className="absolute top-0 left-0 w-full h-full">
           <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] animate-pulse"></div>
@@ -44,7 +44,7 @@ const OngoingProjects = () => {
             <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] font-black uppercase tracking-[0.3em] mb-8">
               <Activity size={16} className="animate-pulse" /> Precision in Progress
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-10 tracking-tight leading-[1.2]">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-8 sm:mb-10 tracking-tight leading-[1.2]">
               Building Tomorrow, <br />
               <span className="text-primary italic font-light">Today.</span>
             </h1>
@@ -134,7 +134,7 @@ const OngoingProjects = () => {
       </section>
 
       {/* Project Cards - Desktop Layout */}
-      <section className="py-32 bg-slate-50 relative hidden lg:block">
+      <section className="py-16 sm:py-20 md:py-24 lg:py-32 bg-slate-50 relative hidden lg:block">
         <div className="container mx-auto px-4">
           <div className="flex flex-col gap-12">
             {ongoingProjects.map((project, idx) => (

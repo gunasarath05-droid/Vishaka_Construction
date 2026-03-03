@@ -34,7 +34,7 @@ const CompletedProjects = () => {
   return (
     <div className="bg-white min-h-screen">
       {/* Standardized Hero Section */}
-      <section className="relative pt-40 pb-32 bg-secondary-dark overflow-hidden">
+      <section className="relative pt-28 sm:pt-32 md:pt-40 pb-20 sm:pb-28 md:pb-32 bg-secondary-dark overflow-hidden">
         {/* Background Decorative Elements */}
         <div className="absolute top-0 left-0 w-full h-full">
           <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] animate-pulse"></div>
@@ -55,7 +55,7 @@ const CompletedProjects = () => {
             <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] font-semibold uppercase tracking-[0.3em] mb-8">
               <CheckCircle2 size={16} /> Architectural Milestones
             </div>
-            <h1 className="text-5xl md:text-7xl font-semibold text-white mb-10 tracking-tight leading-[1.2]">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-white mb-8 sm:mb-10 tracking-tight leading-[1.2]">
               Our Legacy, <br />
               <span className="text-primary italic font-light">Defined.</span>
             </h1>
@@ -69,7 +69,7 @@ const CompletedProjects = () => {
                 <button
                   key={cat.id}
                   onClick={() => setFilter(cat.id)}
-                  className={`group relative px-12 py-5 rounded-3xl text-[10px] font-semibold uppercase tracking-[0.3em] transition-all duration-700 overflow-hidden ${filter === cat.id
+                  className={`group relative px-6 sm:px-8 md:px-12 py-3 sm:py-4 md:py-5 rounded-2xl sm:rounded-3xl text-[10px] font-semibold uppercase tracking-[0.3em] transition-all duration-700 overflow-hidden ${filter === cat.id
                     ? 'bg-primary text-white shadow-2xl shadow-primary/40 scale-105'
                     : 'bg-white/5 text-white/40 hover:text-white border border-white/10 hover:border-primary/50'
                     }`}
@@ -161,7 +161,7 @@ const CompletedProjects = () => {
       </section>
 
       {/* Cinematic Project Showcase - Desktop Grid */}
-      <section className="py-40 bg-white hidden lg:block">
+      <section className="py-20 sm:py-28 md:py-32 lg:py-40 bg-white hidden lg:block">
         <div className="container mx-auto px-4">
           <motion.div
             layout

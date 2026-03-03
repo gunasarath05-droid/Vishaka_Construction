@@ -23,7 +23,7 @@ const PromoVideo = () => {
                 </span>
               </div>
 
-              <h2 className="text-4xl md:text-5xl font-bold text-slate-800 leading-tight mb-8">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800 leading-tight mb-6 sm:mb-8">
                 Watch How We Shape the <br />
                 <span className="text-slate-900">Modern World</span>
               </h2>
@@ -73,7 +73,7 @@ const PromoVideo = () => {
                 initial={{ opacity: 0, scale: 0 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:left-0 lg:-translate-x-1/2 z-20 flex flex-col items-center"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:left-4 xl:left-0 xl:-translate-x-1/2 z-20 flex flex-col items-center"
               >
                 <motion.div
                   whileHover={{ scale: 1.1 }}

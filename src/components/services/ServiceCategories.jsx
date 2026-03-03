@@ -93,18 +93,18 @@ const ServiceCategories = () => {
     );
 
     return (
-        <section className="py-24 bg-white overflow-hidden">
+        <section className="py-16 sm:py-20 md:py-24 bg-white overflow-hidden">
             <div className="container mx-auto px-4 py-4">
                 <div className="text-center max-w-3xl mx-auto mb-16 px-4">
                     <h2 className="text-[10px] font-black text-primary uppercase tracking-[0.4em] mb-4">Core Sectors</h2>
-                    <h3 className="text-4xl font-bold text-secondary-dark mb-6 tracking-tighter uppercase">Specialized Solutions for <br />Every Industry</h3>
+                    <h3 className="text-3xl sm:text-4xl font-bold text-secondary-dark mb-6 tracking-tighter uppercase">Specialized Solutions for <br />Every Industry</h3>
                     <p className="text-slate-500 text-lg font-light leading-relaxed">
                         We deliver excellence across diverse sectors, ensuring each project meets the unique technical and aesthetic requirements of its domain.
                     </p>
                 </div>
 
                 {/* Mobile Tactile Slider */}
-                <div className="lg:hidden h-[650px]">
+                <div className="lg:hidden h-[540px] sm:h-[580px] md:h-[640px]">
                     {(() => {
                         const displayCategories = categories.length > 0 && categories.length < 6 ? [...categories, ...categories] : categories;
 

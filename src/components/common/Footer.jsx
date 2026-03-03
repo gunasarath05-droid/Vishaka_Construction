@@ -5,8 +5,8 @@ import images from '../../data/images';
 
 const Footer = () => {
     return (
-        <footer className="bg-slate-900 text-white pt-20 pb-10">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <footer className="bg-slate-900 text-white pt-12 sm:pt-16 md:pt-20 pb-8 sm:pb-10">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 lg:gap-12">
                 <div>
                     <div className="flex items-center space-x-2 mb-6">
                         <div className="w-10 h-10 bg-white p-1 rounded-lg flex items-center justify-center text-white font-bold text-xl">
@@ -81,7 +81,7 @@ const Footer = () => {
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 pt-8 border-t border-slate-800 text-center text-slate-500 text-sm">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 sm:mt-16 md:mt-20 pt-6 sm:pt-8 border-t border-slate-800 text-center text-slate-500 text-sm">
                 <p>&copy; {new Date().getFullYear()} Vishaka Constructions. All rights reserved. | <Link to="/privacy" className="hover:text-white">Privacy Policy</Link></p>
             </div>
         </footer>

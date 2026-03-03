@@ -22,7 +22,7 @@ const FeaturedProjects = () => {
                 />
             </div>
 
-            <div className="max-w-full mx-auto px-4 md:pl-40 relative z-10 pt-32">
+            <div className="max-w-full mx-auto px-4 sm:px-6 md:px-10 lg:pl-32 xl:pl-40 relative z-10 pt-16 sm:pt-24 md:pt-32">
 
                 {/* Header Section */}
                 <div className="flex flex-col md:flex-row justify-between items-end gap-6">
@@ -38,13 +38,13 @@ const FeaturedProjects = () => {
                                 OUR WORK
                             </span>
                         </div>
-                        <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
                             Portfolio of completed projects
                         </h2>
                     </motion.div>
 
                     {/* View All Projects Button */}
-                    <div className="flex mr-20">
+                    <div className="flex mr-0 sm:mr-8 md:mr-16 lg:mr-20">
                         <Link
                             to="/projects"
                             className="group flex items-center space-x-4 bg-white/10 backdrop-blur-md border border-white/20 px-10 py-5 rounded-full text-white font-bold hover:bg-teal-500 hover:border-teal-500 transition-all duration-500 shadow-xl"

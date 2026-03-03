@@ -22,13 +22,13 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="py-24 bg-slate-50">
+    <section className="py-16 sm:py-20 md:py-24 bg-slate-50">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-20">
+        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-10 sm:gap-14 lg:gap-20">
           {/* Form Left Side */}
           <div className="lg:w-1/3">
             <h2 className="text-sm font-bold text-primary uppercase tracking-[0.4em] mb-6">Send a message</h2>
-            <h3 className="text-4xl md:text-5xl font-bold text-secondary-dark mb-8 leading-tight">
+            <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-secondary-dark mb-6 sm:mb-8 leading-tight">
               Have a specific <br /> enquiry?
             </h3>
             <p className="text-slate-500 text-xl leading-relaxed mb-10 font-light">
@@ -57,7 +57,7 @@ const ContactForm = () => {
               onSubmit={handleSubmit}
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              className="bg-white p-12 lg:p-16 rounded-[4rem] shadow-2xl shadow-slate-200/50 space-y-8"
+              className="bg-white p-6 sm:p-8 md:p-12 lg:p-16 rounded-[2.5rem] sm:rounded-[4rem] shadow-2xl shadow-slate-200/50 space-y-6 sm:space-y-8"
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="relative">

@@ -25,7 +25,7 @@ const BrandShowcase = () => {
                         />
                     </div>
 
-                    <div className="relative z-20 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 p-10 lg:p-24 items-center">
+                    <div className="relative z-20 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 p-6 sm:p-10 lg:p-24 items-center">
 
                         {/* Left Side: Editorial Typography */}
                         <div className="lg:col-span-5 text-white">
@@ -37,7 +37,7 @@ const BrandShowcase = () => {
                                     </span>
                                 </div>
 
-                                <h2 className="text-4xl md:text-6xl font-black text-white leading-tight mb-8">
+                                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6 sm:mb-8">
                                     OUR <span className="text-teal-400">PARTNERS</span>
                                 </h2>
 
@@ -49,7 +49,7 @@ const BrandShowcase = () => {
                         </div>
 
                         <div className="lg:col-span-7">
-                            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-10">
+                            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 lg:gap-10">
                                 {brands.map((brand) => (
                                     <div
                                         key={brand.id}

@@ -21,9 +21,9 @@ const Counter = ({ value, duration = 1.5 }) => {
 
 const CompanyStory = () => {
   return (
-    <section className="py-24 bg-white overflow-hidden">
+    <section className="py-16 sm:py-20 md:py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row items-center gap-16">
+        <div className="flex flex-col lg:flex-row items-center gap-10 sm:gap-14 lg:gap-16">
           {/* Visual Side */}
           <div className="lg:w-1/2 relative">
             <motion.div
@@ -35,7 +35,7 @@ const CompanyStory = () => {
               <img
                 src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop"
                 alt="Construction Site"
-                className="w-full h-[600px] object-cover"
+                className="w-full h-64 sm:h-80 md:h-[500px] lg:h-[600px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
             </motion.div>
@@ -45,7 +45,7 @@ const CompanyStory = () => {
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="absolute -bottom-8 -right-8 bg-primary text-white p-8 rounded-3xl shadow-2xl z-20 hidden md:block"
+              className="absolute -bottom-8 -right-4 sm:-right-8 bg-primary text-white p-5 sm:p-8 rounded-3xl shadow-2xl z-20"
             >
               <p className="text-5xl font-bold mb-1">
                 <Counter value={15} />+
@@ -65,7 +65,7 @@ const CompanyStory = () => {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-sm font-bold text-primary uppercase tracking-[0.3em] mb-4">Our Legacy</h2>
-              <h3 className="text-4xl md:text-5xl font-bold text-secondary-dark mb-8 leading-tight">
+              <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-secondary-dark mb-6 sm:mb-8 leading-tight">
                 Building Relationships <br />
                 <span className="text-slate-400 font-light">One Brick at a Time</span>
               </h3>

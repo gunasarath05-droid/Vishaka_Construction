@@ -77,7 +77,7 @@ const Hero = () => {
     const navigate = useNavigate();
 
     return (
-        <section className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden bg-[#F8FAFC]">
+        <section className="relative min-h-screen flex items-center pt-20 pb-12 overflow-hidden bg-[#F8FAFC]">
             {/* Navbar Visibility Gradient Overlay */}
             <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-black/40 via-transparent to-transparent z-[5] pointer-events-none" />
 
@@ -158,8 +158,8 @@ const Hero = () => {
             </div>
 
             {/* Content Column */}
-            <div className="max-w-[1600px] mx-auto px-6 md:px-14 relative z-20 w-full">
-                <div className="lg:max-w-[55%] xl:max-w-[50%]">
+            <div className="max-w-[1600px] mx-auto px-4 sm:px-8 md:px-14 relative z-20 w-full">
+                <div className="w-full md:max-w-[75%] lg:max-w-[55%] xl:max-w-[50%]">
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={activeProject.id}
@@ -173,7 +173,7 @@ const Hero = () => {
                                 initial={{ scaleX: 0, opacity: 0 }}
                                 animate={{ scaleX: 1, opacity: 1 }}
                                 transition={{ delay: 0.3, duration: 0.8 }}
-                                className="flex items-center space-x-4 mb-8 origin-left"
+                                className="flex items-center space-x-2 sm:space-x-4 mb-4 sm:mb-8 origin-left"
                             >
                                 <span className="w-10 h-[2px] bg-teal-500 block" />
                                 <span className="text-[9px] font-black tracking-[0.35em] uppercase text-teal-700">
@@ -185,19 +185,19 @@ const Hero = () => {
                             </motion.div>
 
                             {/* Editorial Mixed-Weight Headline */}
-                            <div className="mb-10 space-y-2">
-                                <h2 className="text-6xl md:text-7xl xl:text-[6rem] font-black text-slate-900 leading-[0.88] tracking-tighter drop-shadow-sm">
+                            <div className="mb-6 sm:mb-10 space-y-1 sm:space-y-2">
+                                <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[6rem] font-black text-slate-900 leading-[0.88] tracking-tighter drop-shadow-sm">
                                     {activeProject.title[0]}
                                 </h2>
-                                <h2 className="text-6xl md:text-7xl xl:text-[6rem] font-thin italic text-slate-600 leading-[0.88] tracking-tighter">
+                                <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[6rem] font-thin italic text-slate-600 leading-[0.88] tracking-tighter">
                                     {activeProject.title[1]}
                                 </h2>
-                                <h1 className="text-6xl md:text-7xl xl:text-[6rem] font-black text-teal-600 leading-[0.88] tracking-tighter drop-shadow-sm">
+                                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[6rem] font-black text-teal-600 leading-[0.88] tracking-tighter drop-shadow-sm">
                                     {activeProject.title[2]}
                                 </h1>
                             </div>
 
-                            <p className="text-slate-700 text-lg md:text-xl leading-relaxed max-w-[500px] mb-12 font-medium">
+                            <p className="text-slate-700 text-base sm:text-lg md:text-xl leading-relaxed max-w-[500px] mb-8 sm:mb-12 font-medium">
                                 {activeProject.description}
                             </p>
 
@@ -220,7 +220,7 @@ const Hero = () => {
                     </AnimatePresence>
 
                     {/* Blueprint Thumbnail Navigation */}
-                    <div className="mt-20 flex items-end space-x-5">
+                    <div className="mt-10 sm:mt-16 lg:mt-20 flex items-end space-x-3 sm:space-x-5">
                         {PROJECTS.map((project, index) => (
                             <button
                                 key={project.id}
