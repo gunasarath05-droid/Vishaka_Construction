@@ -94,7 +94,7 @@ const Navbar = () => {
                                     VISHAKA <span className={`font-light ${scrolled ? 'text-primary' : 'text-teal-300'}`}>Constructions</span>
                                 </span>
                                 <span className={`text-[8px] sm:text-[9px] font-bold tracking-widest uppercase transition-colors duration-300 ${scrolled ? 'text-slate-400' : 'text-white/50'}`}>
-                                    Building Trust Since 2009
+                                    Build your Home with our House
                                 </span>
                             </div>
                         </Link>
