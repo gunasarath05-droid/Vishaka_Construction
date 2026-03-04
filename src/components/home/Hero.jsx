@@ -77,9 +77,9 @@ const Hero = () => {
     const navigate = useNavigate();
 
     return (
-        <section className="relative h-screen flex items-center pt-32 pb-12 overflow-hidden bg-[#F8FAFC]">
+        <section className="relative h-screen flex items-center pt-32 pb-6 overflow-hidden bg-[#F8FAFC]">
             {/* Navbar Visibility Gradient Overlay */}
-            <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-black/40 via-transparent to-transparent z-[5] pointer-events-none" />
+            <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-black/50 via-transparent to-transparent z-[5] pointer-events-none" />
 
             {/* Cinematic Full-Bleed Background Image */}
             <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
@@ -168,16 +168,31 @@ const Hero = () => {
                             exit={{ opacity: 0, y: -30 }}
                             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                         >
+                            {/* Signature Line */}
+                            <motion.div
+                                initial={{ scaleX: 0, opacity: 0 }}
+                                animate={{ scaleX: 1, opacity: 1 }}
+                                transition={{ delay: 0.3, duration: 0.8 }}
+                                className="flex items-center space-x-2 sm:space-x-4 mb-3 sm:mb-6 origin-left"
+                            >
+                                <span className="w-10 h-[2px] bg-teal-500 block" />
+                                <span className="text-[10px] sm:text-[11px] font-black tracking-[0.35em] uppercase text-teal-700">
+                                    Vishaka Core · {activeProject.year}
+                                </span>
+                                <span className="bg-slate-900 text-white text-[9px] sm:text-[10px] font-black px-3 py-1.5 rounded-sm tracking-widest uppercase">
+                                    {activeProject.badge}
+                                </span>
+                            </motion.div>
 
                             {/* Editorial Mixed-Weight Headline */}
-                            <div className="mb-4 sm:mb-8 space-y-1 sm:space-y-2 lg:space-y-0">
-                                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[5rem] font-black text-slate-900 leading-[0.88] tracking-tighter drop-shadow-sm">
+                            <div className="mb-3 sm:mb-6 space-y-1 sm:space-y-2 lg:space-y-0">
+                                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.8rem] xl:text-7xl font-black text-slate-900 leading-[0.9] tracking-tighter drop-shadow-sm">
                                     {activeProject.title[0]}
                                 </h2>
-                                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[5rem] font-thin italic text-slate-600 leading-[0.88] tracking-tighter">
+                                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.8rem] xl:text-7xl font-thin italic text-slate-600 leading-[0.9] tracking-tighter">
                                     {activeProject.title[1]}
                                 </h2>
-                                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[5rem] font-black text-teal-600 leading-[0.88] tracking-tighter drop-shadow-sm">
+                                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.8rem] xl:text-7xl font-black text-teal-600 leading-[0.9] tracking-tighter drop-shadow-sm">
                                     {activeProject.title[2]}
                                 </h1>
                             </div>
@@ -205,7 +220,7 @@ const Hero = () => {
                     </AnimatePresence>
 
                     {/* Blueprint Thumbnail Navigation */}
-                    <div className="mt-8 sm:mt-12 lg:mt-14 flex items-end space-x-2 sm:space-x-5">
+                    <div className="mt-6 sm:mt-8 lg:mt-10 flex items-end space-x-2 sm:space-x-5">
                         {PROJECTS.map((project, index) => (
                             <button
                                 key={project.id}
@@ -233,16 +248,6 @@ const Hero = () => {
                                             </div>
                                         </>
                                     )}
-                                </div>
-
-                                {/* Project Label */}
-                                <div className={`transition-all duration-500 ${activeIndex === index ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-1 group-hover:opacity-100'}`}>
-                                    <span className="block text-[9px] font-black uppercase tracking-[0.2em] text-teal-600 mb-0.5">
-                                        {String(index + 1).padStart(2, '0')}
-                                    </span>
-                                    <span className="block text-[10px] sm:text-[11px] font-bold uppercase tracking-tight text-slate-900 max-w-[90px] truncate">
-                                        {project.subtitle}
-                                    </span>
                                 </div>
                             </button>
                         ))}
