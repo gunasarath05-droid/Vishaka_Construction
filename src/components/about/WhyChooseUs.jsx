@@ -58,7 +58,7 @@ const WhyChooseUs = () => {
   return (
     <section className="py-24 bg-secondary-dark relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 mb-20">
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 ">
           {/* Content Side */}
           <div className="lg:w-1/2">
             <motion.div
@@ -118,7 +118,7 @@ const WhyChooseUs = () => {
                     <SwiperSlide key={index} className="py-12 overflow-visible">
                       {({ isActive }) => (
                         <div className={`h-[320px] transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${isActive
-                          ? 'scale-110 opacity-100 blur-0 translate-y-0 z-20 brightness-110 shadow-[0_20px_60px_-15px_rgba(13,148,136,0.2)] pt-2'
+                          ? 'scale-110 opacity-100 blur-0 translate-y-0 z-20 brightness-110 shadow-[0_20px_60px_-15px_rgba(13,148,136,0.2)] pb-10'
                           : 'scale-75 opacity-20 blur-[2px] translate-y-8 z-10'
                           }`}>
                           <div className="w-[90%] mx-auto h-full">
