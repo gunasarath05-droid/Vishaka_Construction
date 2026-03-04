@@ -58,7 +58,7 @@ const WhyChooseUs = () => {
   return (
     <section className="py-24 bg-secondary-dark relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 mb-20">
           {/* Content Side */}
           <div className="lg:w-1/2">
             <motion.div
