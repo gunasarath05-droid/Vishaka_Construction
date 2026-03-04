@@ -44,43 +44,43 @@ const ServiceCard = ({ service }) => (
       <div className={`absolute -inset-1 bg-gradient-to-b ${service.color} to-transparent blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700`}></div>
 
       {/* Main Card: High Contrast White */}
-      <div className="relative bg-white/95 backdrop-blur-sm p-8 md:p-10 lg:p-12 rounded-[3rem] shadow-[0_20px_50px_rgba(0,0,0,0.03)] border border-slate-100 h-full min-h-[520px] flex flex-col transition-all duration-500 group-hover:border-teal-500/20 group-hover:shadow-[0_40px_80px_rgba(0,0,0,0.1)] overflow-hidden">
+      <div className="relative bg-white/95 backdrop-blur-sm p-6 md:p-8 lg:p-9 rounded-[2rem] md:rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.03)] border border-slate-100 h-full flex flex-col transition-all duration-500 group-hover:border-teal-500/20 group-hover:shadow-[0_40px_80px_rgba(0,0,0,0.1)] overflow-hidden">
 
         {/* Visual Corner Accents */}
         <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-slate-50 to-transparent -mr-12 -mt-12 rounded-full transition-transform duration-700 group-hover:scale-150"></div>
 
         {/* Technical Header (HUD Elements) */}
-        <div className="flex justify-between items-center mb-10 relative z-10">
+        <div className="flex justify-between items-center mb-5 md:mb-8 relative z-10">
           <div className="flex flex-col">
-            <span className="text-[10px] font-black text-teal-600 tracking-[0.2em]">{service.id}</span>
+            <span className="text-[11px] font-black text-teal-600 tracking-[0.2em]">{service.id}</span>
             <div className="flex items-center space-x-2">
               <div className="w-1.5 h-1.5 rounded-full bg-teal-500 animate-pulse"></div>
-              <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">{service.status}</span>
+              <span className="text-[11px] font-black text-slate-400 uppercase tracking-widest">{service.status}</span>
             </div>
           </div>
           <ShieldCheck size={20} className="text-slate-200 group-hover:text-teal-500 transition-colors duration-500" />
         </div>
 
         {/* Central Icon with Lens Glow */}
-        <div className="relative mb-8 w-fit z-10">
+        <div className="relative mb-4 md:mb-5 lg:mb-6 w-fit z-10">
           <div className={`absolute inset-0 bg-${service.accent}-400/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 scale-150`}></div>
-          <div className="relative w-20 h-20 bg-slate-50 border border-slate-100 rounded-[2rem] flex items-center justify-center transition-all duration-700 group-hover:bg-slate-900 group-hover:text-white group-hover:border-slate-900 group-hover:rotate-[10deg] shadow-inner">
-            <service.icon size={36} className="transition-transform duration-500 group-hover:scale-110" />
+          <div className="relative w-14 h-14 md:w-16 md:h-16 lg:w-18 lg:h-18 bg-slate-50 border border-slate-100 rounded-[1.5rem] md:rounded-[2rem] flex items-center justify-center transition-all duration-700 group-hover:bg-slate-900 group-hover:text-white group-hover:border-slate-900 group-hover:rotate-[10deg] shadow-inner">
+            <service.icon size={30} className="md:size-[36px] transition-transform duration-500 group-hover:scale-110" />
           </div>
         </div>
 
         <div className="relative z-10">
-          <h3 className="text-xl md:text-2xl font-black text-slate-900 mb-4 group-hover:text-teal-600 transition-colors duration-500 min-h-[3rem]">{service.title}</h3>
-          <p className="text-slate-500 leading-relaxed mb-10 font-medium text-sm md:text-base">
+          <h3 className="text-lg md:text-xl lg:text-2xl font-black text-slate-900 mb-2 md:mb-3 group-hover:text-teal-600 transition-colors duration-500 min-h-[2.5rem] md:min-h-[3rem]">{service.title}</h3>
+          <p className="text-slate-500 leading-relaxed mb-4 md:mb-6 font-medium text-xs md:text-sm lg:text-base">
             {service.desc}
           </p>
         </div>
 
         {/* Action HUD Bar */}
-        <div className="mt-auto pt-8 border-t border-slate-50 flex items-center justify-between relative z-10">
+        <div className="mt-auto pt-5 md:pt-8 border-t border-slate-50 flex items-center justify-between relative z-10">
           <div className="flex items-center space-x-2 group-hover:space-x-4 transition-all duration-500">
             <div className="w-6 h-[1px] bg-teal-500 opacity-40"></div>
-            <span className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] group-hover:text-teal-600 transition-colors duration-500 whitespace-nowrap">
+            <span className="text-[11px] font-black text-slate-400 uppercase tracking-[0.2em] group-hover:text-teal-600 transition-colors duration-500 whitespace-nowrap">
               {service.stat}
             </span>
           </div>
@@ -171,10 +171,10 @@ const ServicesHighlight = () => {
         </div>
       </div>
 
-      <div className="max-w-[90%] mx-auto px-4 md:px-12 relative z-10">
+      <div className="max-w-[95%] mx-auto px-4 md:px-12 relative z-10">
 
         {/* Header Section: Editorial Style with Original Content */}
-        <div className="flex flex-col items-center text-center mb-20 md:mb-24">
+        <div className="flex flex-col items-center text-center mb-10 md:mb-20 lg:mb-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -195,77 +195,61 @@ const ServicesHighlight = () => {
           </motion.div>
         </div>
 
-        {/* Mobile Swiper (Visible on small/medium screens) */}
-        <div className="lg:hidden mt-10">
-          {(() => {
-            const displayServices = services.length > 0 && services.length < 6 ? [...services, ...services] : services;
-            const canLoop = displayServices.length >= 6;
+        {/* Unified Swiper — Premium animation across all screen sizes */}
+        <div className="relative group/swiper">
+          <Swiper
+            modules={[Pagination, Autoplay]}
+            spaceBetween={20}
+            slidesPerView={1.15}
+            centeredSlides={true}
+            loop={true}
+            speed={1000}
+            grabCursor={true}
+            autoplay={{
+              delay: 4000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true
+            }}
+            pagination={{
+              clickable: true,
+              dynamicBullets: true
+            }}
+            breakpoints={{
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+                centeredSlides: false,
+              },
+              1024: {
+                slidesPerView: 3.2,
+                spaceBetween: 30,
+                centeredSlides: true,
+              }
+            }}
+            className="services-swiper pb-16 lg:pb-24"
+          >
+            {[...services, ...services].map((service, idx) => (
+              <SwiperSlide key={`${service.id}-${idx}`} className="py-10 overflow-visible">
+                {({ isActive }) => (
+                  <div className={`h-full transition-all duration-1000 ease-[cubic-bezier(0.23,1,0.32,1)] ${isActive
+                    ? 'opacity-100 scale-100 z-20 shadow-[-20px_0_60px_-15px_rgba(0,0,0,0.05),20px_0_60px_-15px_rgba(0,0,0,0.05)]'
+                    : 'opacity-60 scale-95 blur-[0.5px] z-10'
+                    }`}>
+                    {/* Minimal Glow for Active Card - Pure Premium */}
+                    <div className={`absolute -inset-2 bg-teal-500/5 blur-3xl rounded-[3rem] -z-10 transition-opacity duration-1000 ${isActive ? 'opacity-100' : 'opacity-0'}`}></div>
 
-            return (
-              <Swiper
-                modules={[Pagination, Autoplay]}
-                spaceBetween={24}
-                slidesPerView={1.12}
-                centeredSlides={true}
-                loop={canLoop}
-                autoplay={{ delay: 4000, disableOnInteraction: false }}
-                pagination={{
-                  clickable: true
-                }}
-                className="services-swiper pb-12 px-4"
-              >
-                {displayServices.map((service, idx) => (
-                  <SwiperSlide key={`${service.id}-${idx}`} className="py-12 px-2 overflow-visible">
-                    {({ isActive }) => (
-                      <div className={`h-full transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${isActive
-                        ? 'scale-[1.05] opacity-100 blur-0 translate-y-0'
-                        : 'scale-90 opacity-40 blur-[1.5px] translate-y-4'
-                        }`}>
-                        <ServiceCard service={service} />
-                      </div>
-                    )}
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            );
-          })()}
-
+                    <ServiceCard service={service} />
+                  </div>
+                )}
+              </SwiperSlide>
+            ))}
+          </Swiper>
           <style jsx="true">{`
-            .services-swiper .swiper-pagination {
-              bottom: 0px !important;
-              left: 0 !important;
-              width: 100% !important;
-              display: flex !important;
-              justify-content: center !important;
-              align-items: center !important;
-              gap: 8px !important;
-            }
-            .services-swiper .swiper-pagination-bullet {
-              background: #0d9488;
-              opacity: 0.3;
-              margin: 0 !important;
-            }
-            .services-swiper .swiper-pagination-bullet-active {
-              opacity: 1;
-              width: 24px;
-              border-radius: 4px;
-              background: #0D9488;
-            }
+            .services-swiper .swiper-pagination { bottom: 0 !important; display: flex !important; justify-content: center !important; gap: 8px !important; }
+            .services-swiper .swiper-pagination-bullet { background: #0d9488; opacity: 0.2; margin: 0 !important; width: 10px; height: 10px; transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1); }
+            .services-swiper .swiper-pagination-bullet-active { opacity: 1; width: 40px; border-radius: 5px; background: #0D9488; }
           `}</style>
         </div>
-
-        {/* Desktop Grid (Visible on large screens) */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false, margin: "-100px" }}
-          className="hidden lg:grid grid-cols-4 gap-8"
-        >
-          {services.map((service) => (
-            <ServiceCard key={service.id} service={service} />
-          ))}
-        </motion.div>
 
       </div>
     </section>

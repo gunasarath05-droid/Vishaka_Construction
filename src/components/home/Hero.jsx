@@ -77,7 +77,7 @@ const Hero = () => {
     const navigate = useNavigate();
 
     return (
-        <section className="relative min-h-screen flex items-center pt-20 pb-12 overflow-hidden bg-[#F8FAFC]">
+        <section className="relative h-screen flex items-center pt-32 pb-12 overflow-hidden bg-[#F8FAFC]">
             {/* Navbar Visibility Gradient Overlay */}
             <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-black/40 via-transparent to-transparent z-[5] pointer-events-none" />
 
@@ -119,22 +119,22 @@ const Hero = () => {
                         animate={{ opacity: 1, y: 0, x: 0 }}
                         exit={{ opacity: 0, y: 20 }}
                         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                        className="absolute bottom-12 right-8 lg:right-16 z-30 hidden md:flex"
+                        className="absolute bottom-4 right-4 md:bottom-8 md:right-8 lg:bottom-12 lg:right-16 z-30 hidden md:flex"
                     >
-                        <div className="backdrop-blur-2xl bg-white/60 border border-white/80 px-8 py-5 rounded-3xl shadow-[0_30px_80px_-10px_rgba(0,0,0,0.1)] flex items-center space-x-8">
+                        <div className="backdrop-blur-2xl bg-white/60 border border-white/80 px-4 py-3 md:px-6 md:py-4 lg:px-8 lg:py-5 rounded-3xl shadow-[0_30px_80px_-10px_rgba(0,0,0,0.1)] flex items-center space-x-4 md:space-x-6 lg:space-x-8">
                             <div className="flex flex-col items-start">
-                                <span className="text-[7px] font-black uppercase tracking-[0.25em] text-teal-600 mb-1">Surface</span>
-                                <span className="text-base font-bold text-slate-900 tabular-nums">{activeProject.area}</span>
+                                <span className="text-[8px] lg:text-[10px] font-black uppercase tracking-[0.25em] text-teal-600 mb-0.5 lg:mb-1">Surface</span>
+                                <span className="text-sm lg:text-base font-bold text-slate-900 tabular-nums">{activeProject.area}</span>
                             </div>
-                            <div className="w-px h-8 bg-slate-200" />
+                            <div className="w-px h-6 lg:h-8 bg-slate-200" />
                             <div className="flex flex-col items-start">
-                                <span className="text-[7px] font-black uppercase tracking-[0.25em] text-teal-600 mb-1">Location</span>
-                                <span className="text-base font-bold text-slate-900">{activeProject.location}</span>
+                                <span className="text-[8px] lg:text-[10px] font-black uppercase tracking-[0.25em] text-teal-600 mb-0.5 lg:mb-1">Location</span>
+                                <span className="text-sm lg:text-base font-bold text-slate-900">{activeProject.location}</span>
                             </div>
-                            <div className="w-px h-8 bg-slate-200" />
+                            <div className="w-px h-6 lg:h-8 bg-slate-200" />
                             <div className="flex flex-col items-start">
-                                <span className="text-[7px] font-black uppercase tracking-[0.25em] text-teal-600 mb-1">Year</span>
-                                <span className="text-base font-bold text-slate-900 tabular-nums">{activeProject.year}</span>
+                                <span className="text-[8px] lg:text-[10px] font-black uppercase tracking-[0.25em] text-teal-600 mb-0.5 lg:mb-1">Year</span>
+                                <span className="text-sm lg:text-base font-bold text-slate-900 tabular-nums">{activeProject.year}</span>
                             </div>
                         </div>
                     </motion.div>
@@ -142,7 +142,7 @@ const Hero = () => {
             </div>
 
             {/* Ghost Backdrop Text */}
-            <div className="absolute inset-0 flex items-center justify-end pr-8 opacity-[0.04] select-none pointer-events-none z-10 overflow-hidden mix-blend-overlay">
+            <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex justify-end pr-8 opacity-[0.03] select-none pointer-events-none z-10 overflow-hidden mix-blend-overlay">
                 <AnimatePresence mode="wait">
                     <motion.span
                         key={activeProject.id}
@@ -150,7 +150,7 @@ const Hero = () => {
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: -40 }}
                         transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
-                        className="text-[22vw] font-black leading-none tracking-tighter uppercase text-slate-900 whitespace-nowrap"
+                        className="text-[20vw] md:text-[18vw] font-black leading-none tracking-tighter uppercase text-slate-900 whitespace-nowrap"
                     >
                         {activeProject.subtitle}
                     </motion.span>
@@ -158,8 +158,8 @@ const Hero = () => {
             </div>
 
             {/* Content Column */}
-            <div className="max-w-[1600px] mx-auto px-4 sm:px-8 md:px-14 relative z-20 w-full">
-                <div className="w-full md:max-w-[75%] lg:max-w-[55%] xl:max-w-[50%]">
+            <div className="max-w-[1600px] mx-auto px-4 sm:px-8 md:px-14 relative z-20 w-full mb-4 md:mb-0">
+                <div className="w-full md:max-w-[70%] lg:max-w-[55%] xl:max-w-[50%]">
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={activeProject.id}
@@ -173,31 +173,31 @@ const Hero = () => {
                                 initial={{ scaleX: 0, opacity: 0 }}
                                 animate={{ scaleX: 1, opacity: 1 }}
                                 transition={{ delay: 0.3, duration: 0.8 }}
-                                className="flex items-center space-x-2 sm:space-x-4 mb-4 sm:mb-8 origin-left"
+                                className="flex items-center space-x-2 sm:space-x-4 mb-3 sm:mb-6 origin-left"
                             >
                                 <span className="w-10 h-[2px] bg-teal-500 block" />
-                                <span className="text-[9px] font-black tracking-[0.35em] uppercase text-teal-700">
+                                <span className="text-[10px] sm:text-[11px] font-black tracking-[0.35em] uppercase text-teal-700">
                                     Vishaka Core · {activeProject.year}
                                 </span>
-                                <span className="bg-slate-900 text-white text-[8px] font-black px-3 py-1 rounded-sm tracking-widest uppercase">
+                                <span className="bg-slate-900 text-white text-[9px] sm:text-[10px] font-black px-3 py-1.5 rounded-sm tracking-widest uppercase">
                                     {activeProject.badge}
                                 </span>
                             </motion.div>
 
                             {/* Editorial Mixed-Weight Headline */}
-                            <div className="mb-6 sm:mb-10 space-y-1 sm:space-y-2">
-                                <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[6rem] font-black text-slate-900 leading-[0.88] tracking-tighter drop-shadow-sm">
+                            <div className="mb-4 sm:mb-8 space-y-1 sm:space-y-2 lg:space-y-0">
+                                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[5rem] font-black text-slate-900 leading-[0.88] tracking-tighter drop-shadow-sm">
                                     {activeProject.title[0]}
                                 </h2>
-                                <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[6rem] font-thin italic text-slate-600 leading-[0.88] tracking-tighter">
+                                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[5rem] font-thin italic text-slate-600 leading-[0.88] tracking-tighter">
                                     {activeProject.title[1]}
                                 </h2>
-                                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[6rem] font-black text-teal-600 leading-[0.88] tracking-tighter drop-shadow-sm">
+                                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[5rem] font-black text-teal-600 leading-[0.88] tracking-tighter drop-shadow-sm">
                                     {activeProject.title[2]}
                                 </h1>
                             </div>
 
-                            <p className="text-slate-700 text-base sm:text-lg md:text-xl leading-relaxed max-w-[500px] mb-8 sm:mb-12 font-medium">
+                            <p className="text-slate-700 text-sm sm:text-base md:text-lg leading-relaxed max-w-[500px] mb-6 sm:mb-8 font-medium">
                                 {activeProject.description}
                             </p>
 
@@ -220,7 +220,7 @@ const Hero = () => {
                     </AnimatePresence>
 
                     {/* Blueprint Thumbnail Navigation */}
-                    <div className="mt-10 sm:mt-16 lg:mt-20 flex items-end space-x-3 sm:space-x-5">
+                    <div className="mt-8 sm:mt-12 lg:mt-14 flex items-end space-x-2 sm:space-x-5">
                         {PROJECTS.map((project, index) => (
                             <button
                                 key={project.id}
@@ -228,9 +228,9 @@ const Hero = () => {
                                 className="group relative flex-shrink-0"
                             >
                                 {/* Thumbnail Frame */}
-                                <div className={`relative overflow-hidden rounded-2xl mb-3 border-2 transition-all duration-700 ${activeIndex === index
-                                    ? 'w-28 md:w-36 aspect-[4/3] border-teal-500 shadow-xl scale-105'
-                                    : 'w-20 md:w-24 aspect-[4/3] border-slate-300 opacity-60 grayscale hover:opacity-100 hover:border-slate-400 hover:grayscale-0 hover:scale-105'
+                                <div className={`relative overflow-hidden rounded-xl sm:rounded-2xl mb-3 border-2 transition-all duration-700 ${activeIndex === index
+                                    ? 'w-16 sm:w-20 md:w-28 lg:w-32 aspect-[4/3] border-teal-500 shadow-xl scale-105'
+                                    : 'w-12 sm:w-16 md:w-16 lg:w-20 aspect-[4/3] border-slate-300 opacity-60 grayscale hover:opacity-100 hover:border-slate-400 hover:grayscale-0 hover:scale-105'
                                     }`}>
                                     <img src={project.image} alt={project.subtitle} className="w-full h-full object-cover" />
 
@@ -252,10 +252,10 @@ const Hero = () => {
 
                                 {/* Project Label */}
                                 <div className={`transition-all duration-500 ${activeIndex === index ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-1 group-hover:opacity-100'}`}>
-                                    <span className="block text-[7px] font-black uppercase tracking-[0.2em] text-teal-600 mb-0.5">
+                                    <span className="block text-[9px] font-black uppercase tracking-[0.2em] text-teal-600 mb-0.5">
                                         {String(index + 1).padStart(2, '0')}
                                     </span>
-                                    <span className="block text-[9px] font-bold uppercase tracking-tight text-slate-900 max-w-[90px] truncate">
+                                    <span className="block text-[10px] sm:text-[11px] font-bold uppercase tracking-tight text-slate-900 max-w-[90px] truncate">
                                         {project.subtitle}
                                     </span>
                                 </div>

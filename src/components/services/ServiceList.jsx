@@ -64,42 +64,39 @@ const ServiceList = () => {
 
   const DetailedServiceCard = ({ service, isActive, isMobile = false }) => (
     <div
-      className={`bg-white p-10 rounded-[3rem] border border-slate-100 flex flex-col h-full transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${isMobile
+      className={`bg-white p-8 sm:p-10 rounded-[2.5rem] md:rounded-[3rem] border border-slate-100 flex flex-col h-full transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${isMobile
         ? isActive
-          ? 'scale-105 opacity-100 blur-0 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] z-20'
+          ? 'scale-100 opacity-100 blur-0 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] z-20'
           : 'scale-90 opacity-40 blur-[1px] z-10'
-        : 'group hover:shadow-2xl hover:shadow-primary/5'
+        : 'group hover:shadow-2xl hover:shadow-teal-500/10 hover:-translate-y-2'
         }`}
     >
-      <div className={`w-14 h-14 rounded-2xl bg-teal-50 flex items-center justify-center mb-8 text-primary transition-all duration-300 ${!isMobile && 'group-hover:bg-primary group-hover:text-white'}`}>
-        <service.icon size={28} />
+      <div className={`w-14 h-14 rounded-2xl bg-teal-50 flex items-center justify-center mb-8 text-teal-600 transition-all duration-500 ${!isMobile && 'group-hover:bg-teal-600 group-hover:text-white'}`}>
+        <service.icon size={26} />
       </div>
-      <h4 className="text-xl md:text-2xl font-bold text-secondary-dark mb-4 tracking-tight uppercase leading-none">
+      <h4 className="text-xl md:text-[1.35rem] font-black text-slate-800 mb-4 tracking-tighter uppercase leading-tight">
         {service.title}
       </h4>
-      <p className="text-slate-500 text-sm md:text-base leading-relaxed font-light mb-8">
+      <p className="text-slate-500 text-sm md:text-base leading-relaxed font-medium mb-8">
         {service.desc}
       </p>
 
-      <div className="mt-auto pt-4 flex items-center justify-between">
-        <div className="flex items-center gap-2 text-primary font-black text-[10px] tracking-[0.2em] uppercase">
-          <span className="w-8 h-[2px] bg-primary"></span>
-          View Details
-        </div>
-        {isMobile && <ChevronRight size={20} className="text-primary" />}
+      <div className="mt-auto flex items-center text-[10px] font-black text-teal-600 uppercase tracking-widest group-hover:gap-2 transition-all">
+        <span>Details</span>
+        <ChevronRight size={14} className="ml-1 transition-transform group-hover:translate-x-1" />
       </div>
     </div>
   );
 
   return (
-    <section className="py-24 bg-slate-50 overflow-hidden">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8 text-center md:text-left px-4">
-          <div className="max-w-2xl mx-auto md:mx-0">
-            <h2 className="text-[10px] font-black text-primary uppercase tracking-[0.4em] mb-4">Detailed Services</h2>
-            <h3 className="text-4xl font-bold text-secondary-dark leading-tight tracking-tighter uppercase">
+    <section className="py-20 sm:py-24 md:py-32 bg-slate-50 overflow-hidden" id="detailed-services">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16 sm:mb-20 gap-8">
+          <div className="max-w-2xl">
+            <h2 className="text-[10px] font-black text-teal-600 uppercase tracking-[0.5em] mb-4">Detailed Services</h2>
+            <h3 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 leading-[1.1] tracking-tighter uppercase">
               Comprehensive Expertise <br />
-              <span className="text-primary italic font-light">At Your Service</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-700 to-teal-500 italic font-light">At Your Service</span>
             </h3>
           </div>
         </div>
@@ -150,14 +147,15 @@ const ServiceList = () => {
         </div>
 
         {/* Desktop Grid Layout */}
-        <div className="hidden lg:grid grid-cols-4 gap-x-8 gap-y-12">
+        <div className="hidden lg:grid grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="h-[340px]"
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1, duration: 0.8 }}
+              className="h-full min-h-[380px]"
             >
               <DetailedServiceCard service={service} isActive={false} isMobile={false} />
             </motion.div>

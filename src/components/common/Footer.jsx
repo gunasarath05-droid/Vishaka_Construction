@@ -6,14 +6,12 @@ import images from '../../data/images';
 const Footer = () => {
     return (
         <footer className="bg-slate-900 text-white pt-12 sm:pt-16 md:pt-20 pb-8 sm:pb-10">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 lg:gap-12">
-                <div>
-                    <div className="flex items-center space-x-2 mb-6">
-                        <div className="w-10 h-10 bg-white p-1 rounded-lg flex items-center justify-center text-white font-bold text-xl">
-                            <img src={images.logo} alt="Vishaka Constructions" className="w-10 h-10 object-contain" />
-                        </div>
-                        <Link to="/" className="text-xl font-bold tracking-tight hover:text-primary transition-colors">
-                            VISHAKA <span className="font-light text-primary">CONSTRUCTIONS</span>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12">
+                <div className="col-span-1 sm:col-span-2 lg:col-span-1">
+                    <div className="flex items-center space-x-2 mb-6 text-2xl font-black">
+                        <img src={images.logo} alt="Vishaka Constructions" className="w-10 h-10 object-contain p-1 bg-white rounded-lg shadow-xl" />
+                        <Link to="/" className="tracking-tighter hover:text-primary transition-all">
+                            VISHAKA <span className="font-thin text-primary">CONSTRUCTIONS</span>
                         </Link>
                     </div>
                     <p className="text-slate-400 leading-relaxed mb-8">

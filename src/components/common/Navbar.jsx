@@ -83,17 +83,17 @@ const Navbar = () => {
                     <div className="flex justify-between h-16 items-center">
 
                         {/* Logo */}
-                        <Link to="/" className="flex items-center gap-3 flex-shrink-0">
+                        <Link to="/" className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
                             <img
                                 src={images.logo}
                                 alt="Vishaka Constructions"
-                                className="w-10 h-10 object-contain"
+                                className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
                             />
                             <div className="flex flex-col leading-none">
-                                <span className={`text-lg font-black tracking-tight transition-colors duration-300 ${scrolled ? 'text-secondary-dark' : 'text-white'}`}>
+                                <span className={`text-base sm:text-lg font-black tracking-tight transition-colors duration-300 ${scrolled ? 'text-secondary-dark' : 'text-white'}`}>
                                     VISHAKA <span className={`font-light ${scrolled ? 'text-primary' : 'text-teal-300'}`}>Constructions</span>
                                 </span>
-                                <span className={`text-[9px] font-bold tracking-widest uppercase transition-colors duration-300 ${scrolled ? 'text-slate-400' : 'text-white/50'}`}>
+                                <span className={`text-[8px] sm:text-[9px] font-bold tracking-widest uppercase transition-colors duration-300 ${scrolled ? 'text-slate-400' : 'text-white/50'}`}>
                                     Building Trust Since 2009
                                 </span>
                             </div>
@@ -298,6 +298,18 @@ const Navbar = () => {
                                         )}
                                     </motion.div>
                                 ))}
+                            </div>
+
+                            {/* Mobile Inquire Button */}
+                            <div className="p-6 border-t border-slate-100">
+                                <Link
+                                    to="/contact"
+                                    onClick={() => setIsOpen(false)}
+                                    className="flex items-center justify-center gap-3 w-full py-4 bg-primary text-white rounded-2xl font-black uppercase tracking-widest shadow-lg shadow-primary/20 active:scale-95 transition-transform"
+                                >
+                                    <Phone size={18} />
+                                    Inquire Now
+                                </Link>
                             </div>
 
 

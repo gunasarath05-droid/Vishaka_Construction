@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Upload, Send, CheckCircle2, Briefcase, ChevronDown, User, Mail, Phone } from 'lucide-react';
+import { Upload, Send, CheckCircle2, Briefcase, ChevronDown, User, Mail, Phone, FileText } from 'lucide-react';
 import CustomSelect from '../common/CustomSelect';
 
 const ApplicationForm = () => {

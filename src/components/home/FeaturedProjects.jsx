@@ -13,7 +13,7 @@ const FeaturedProjects = () => {
 
     return (
         <section className="relative bg-[#F8FAFC] overflow-hidden" id="projects">
-            <div className="absolute top-0 left-0 right-0 h-[700px] mr-4 md:mr-12 mt-10 bg-[#004D4D] rounded-tr-[3rem] md:rounded-tr-[4rem] z-0 overflow-hidden">
+            <div className="absolute top-0 left-0 right-0 h-[500px] sm:h-[600px] md:h-[700px] mr-4 md:mr-12 mt-10 bg-[#004D4D] rounded-tr-[3rem] md:rounded-tr-[4rem] z-0 overflow-hidden">
                 {/* Background Image Overlay */}
                 <img
                     src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200"
@@ -58,7 +58,7 @@ const FeaturedProjects = () => {
                 </div>
 
                 {/* Project Slider (Infinite Marquee) */}
-                <div className="relative mt-12 -mx-4 md:-mx-12 overflow-hidden pt-10 pb-20">
+                <div className="relative mt-12 -mx-4 md:-mx-12 overflow-hidden pt-10 pb-40 md:pb-36 lg:pb-32">
                     <motion.div
                         className="flex space-x-6 px-4 md:px-12 w-fit"
                         animate={isPaused ? { x: undefined } : { x: ["0%", "-50%"] }}
@@ -78,7 +78,7 @@ const FeaturedProjects = () => {
                             <Link
                                 key={`${project.id}-${idx}`}
                                 to={`/projects/${project.slug}`}
-                                className="w-[300px] sm:w-[350px] md:w-[400px] flex-shrink-0 group relative block no-underline"
+                                className="w-[280px] sm:w-[350px] md:w-[400px] flex-shrink-0 group relative block no-underline"
                             >
                                 <motion.div className="h-full">
                                     {/* Card Image Container */}
@@ -117,7 +117,7 @@ const FeaturedProjects = () => {
                 </div>
 
             </div>
-            <div className="-mt-32">
+            <div className="-mt-20 sm:-mt-24 md:-mt-24 relative z-20">
                 <CTASection />
             </div>
 

@@ -5,9 +5,9 @@ import images from '../../data/images';
 
 const MapSection = () => {
     return (
-        <section className="relative h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] w-full bg-slate-200 overflow-hidden group">
+        <section className="relative h-[480px] sm:h-[520px] md:h-[600px] lg:h-[700px] w-full bg-slate-200 overflow-hidden group">
             {/* Embedded Google Map */}
-            <div className="absolute inset-0 grayscale contrast-[1.1] brightness-[0.9] group-hover:grayscale-0 group-hover:contrast-100 group-hover:brightness-100 transition-all duration-[1.5s] ease-in-out">
+            <div className="absolute inset-0 lg:grayscale lg:contrast-[1.1] lg:brightness-[0.9] lg:group-hover:grayscale-0 lg:group-hover:contrast-100 lg:group-hover:brightness-100 transition-all duration-[1.5s] ease-in-out">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.5816865780716!2d80.1789046758869!3d12.934585815687113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x336ab3d501bc70d%3A0x40a75b7616ed4938!2sVishaka%20Constructions!5e0!3m2!1sen!2sin!4v1772195795164!5m2!1sen!2sin"
                     width="100%"
@@ -22,14 +22,14 @@ const MapSection = () => {
             </div>
 
             {/* Interactive Office Card - Revealed on Hover */}
-            <div className="absolute inset-0 pointer-events-none flex items-end lg:items-center justify-center lg:justify-start lg:pl-20 pb-4 lg:pb-0">
+            <div className="absolute inset-0 pointer-events-none hidden lg:flex items-center justify-start pl-20">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9, y: 20 }}
                     whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                    className="pointer-events-auto bg-white/90 backdrop-blur-xl p-2 rounded-[2.5rem] shadow-2xl border border-white max-w-[340px] sm:max-w-[380px] w-full mx-4 opacity-100 lg:opacity-0 scale-100 lg:scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-700 ease-out flex flex-col overflow-hidden"
+                    className="pointer-events-auto bg-white/90 backdrop-blur-xl p-2 rounded-[2.5rem] shadow-2xl border border-white max-w-[380px] w-full opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-700 ease-out flex flex-col overflow-hidden"
                 >
                     {/* Office Image Header */}
-                    <div className="h-48 w-full rounded-[2rem] overflow-hidden mb-6 relative">
+                    <div className="h-28 sm:h-40 md:h-48 w-full rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden mb-3 sm:mb-5 relative">
                         <img
                             src={images.project1}
                             alt="Vishaka Constructions Office"
@@ -42,8 +42,8 @@ const MapSection = () => {
                         </div>
                     </div>
 
-                    <div className="px-6 pb-10">
-                        <div className="flex items-start justify-between mb-6">
+                    <div className="px-4 sm:px-6 pb-4 sm:pb-8">
+                        <div className="flex items-start justify-between mb-3 sm:mb-5">
                             <div>
                                 <h4 className="text-xl font-bold text-secondary-dark tracking-tighter uppercase mb-1">Vishaka Constructions</h4>
                                 <div className="flex items-center gap-2 text-primary font-black text-[9px] uppercase tracking-widest">
@@ -55,7 +55,7 @@ const MapSection = () => {
                             </div>
                         </div>
 
-                        <p className="text-xs text-slate-500 leading-relaxed mb-10 font-medium italic">
+                        <p className="text-xs text-slate-500 leading-relaxed mb-4 sm:mb-6 font-medium italic hidden sm:block">
                             "Visit our engineering hub for a personalized consultation regarding your next landmark project."
                         </p>
 
