@@ -168,21 +168,6 @@ const Hero = () => {
                             exit={{ opacity: 0, y: -30 }}
                             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                         >
-                            {/* Signature Line */}
-                            <motion.div
-                                initial={{ scaleX: 0, opacity: 0 }}
-                                animate={{ scaleX: 1, opacity: 1 }}
-                                transition={{ delay: 0.3, duration: 0.8 }}
-                                className="flex items-center space-x-2 sm:space-x-4 mb-3 sm:mb-6 origin-left"
-                            >
-                                <span className="w-10 h-[2px] bg-teal-500 block" />
-                                <span className="text-[10px] sm:text-[11px] font-black tracking-[0.35em] uppercase text-teal-700">
-                                    Vishaka Core · {activeProject.year}
-                                </span>
-                                <span className="bg-slate-900 text-white text-[9px] sm:text-[10px] font-black px-3 py-1.5 rounded-sm tracking-widest uppercase">
-                                    {activeProject.badge}
-                                </span>
-                            </motion.div>
 
                             {/* Editorial Mixed-Weight Headline */}
                             <div className="mb-4 sm:mb-8 space-y-1 sm:space-y-2 lg:space-y-0">
